@@ -1,3 +1,32 @@
 body {
-	color: tomato;
+	color: rgb(59, 9, 0);
+	line-height: 1.5rem;
+	margin-inline-start: 2 rem;
+	margin-inline-end: 2 rem;
+}
+h1{
+	font-family:'lora';
+	font-size: 4rem;
+	font-weight: 600;
+	line-height: 4rem;
+}
+h2, h3 {
+	font-family:'lora';
+	font-size: large;
+	font-weight: 400;
+}
+P {
+	background-color: black;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	margin-block-start: 2 rem;
+	margin-block-end: 10 rem;
+	color: white;
+	font-weight: 200;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+blockquote {
+	background-color: rgb(163, 163, 163);
+	color: black;
+	font-weight: 250;
 }
