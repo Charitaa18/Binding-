@@ -1,32 +1,122 @@
-body {
-	color: rgb(59, 9, 0);
-	line-height: 1.5rem;
-	margin-inline-start: 2 rem;
-	margin-inline-end: 2 rem;
+:root {
+/* BACKGROUND */
+--background-opt1:rgb(0, 0, 0);
+--background-opt2:rgb(83, 8, 8);
+--background-opt3: linear-gradient(to bottom,rgb(39, 38, 42)20px, rgb(56, 54, 62) 52px, rgb(107, 111, 143) 70%, rgb(146, 173, 178));
+	/* Positioning color stops with liner gradient */
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients */
+	/* You can choose the direction of the gradient and also the percentage of space taken up by each colour.  */
+/* COLOURS */
+--primary-white: rgb(243, 243, 243);
+--primary-blue: rgb(0, 134, 146);
+--primary-green:rgb(1, 199, 67);
+--primary-purple:rgb(101, 66, 227);
+/* TYPEFACE */
+--heading-typeface:'lora',sans-serif;
+--primary-typeface:'DM Sans',sans-serif;
+--metadata-typeface:var(--primary-typeface);
+--accent-typeface:'architects daughter', cursive;
+/* TEXTSIZES */
+--basetext:0.5rem;
+--text-xtsml: calc(1.5*var(--basetext));
+--text-sml: calc(2*var(--basetext));
+--text-md: calc(1.5*var(--text-sml));
+--text-lrg: calc(1.5*var(--text-md));
+--text-xlrg: calc(2*var(--text-lrg));
+--text-xxlrg: calc(1.5*var(--text-xlrg));
+/* TEXTTYPE */
+--content:var(--text-sml);
+--metadata: var(--text-md);
+--subheading-sm: var(--text-lrg);
+--subheading-lrg: calc(1.5* var(--subheading-sm));
+--heading: var(--text-xlrg);
+
+/* WEIGHT */
+--base-weight:100;
+--thin-wt: calc(1.5*var(--base-weight));
+--regular-wt: calc(1.5*var(--thin-wt));
+--semibold-wt: calc(1.5*var(--regular-wt));
+--bold-wt: calc(1.5*var(--semibold-wt));
+--extrabold-wt: calc(1.5*var(--bold-wt));
+/* SPACING */
+--base-spacing: var(--basetext);
+--base-spacing-lrg: calc(1.5*var(--base-spacing));
+--paragraph-spacing:calc(2*var(--base-spacing));
+--section-spacing: calc(2.5*var(--paragraph-spacing));
+--content-indent: var(--paragraph-spacing);
+--content-end: var(--content-indent);
+/* LEADING */
+--regular-leading: calc(2*var(--basetext));
+--relaxed-leading: calc(2*var(--regular-leading));
+--open-leading: calc(1.5*var(--relaxed-leading));
+--loose-leading: calc(2*var(--relaxed-leading));
+--extraloose-leading: calc(1.5*var(--loose-leading));
+/* MAXSIZE */
+--phone-max-width: 50rem;
+--laptop-max-width:75rem;
 }
+
+body {
+	background-image: var(--background-opt3);
+	color: rgb(90, 187, 252);
+	line-height: var(--relaxed-leading);
+	/* margin-inline-start: 2 rem;
+	margin-inline-end: 2 rem; */
+	max-inline-size: var(--phone-max-width);
+
+	@media (width > 768px) {
+		max-inline-size: clamp(40rem, 90vw , 65rem);
+	}
+}
+
 h1{
 	font-family:'lora';
 	font-size: 4rem;
 	font-weight: 600;
 	line-height: 4rem;
+	margin-block-start: var(--section-spacing);
+	margin-block-end: var(--section-spacing);
+
 }
 h2, h3 {
 	font-family:'lora';
 	font-size: large;
 	font-weight: 400;
+	margin-block-start: var(--section-spacing);
+}
+h2 {
+	font-size: var(--subheading-lrg);
+}
+h3 {
+	font-size: var(--subheading-sm);
 }
 P {
-	background-color: black;
-	padding: 2rem;
 	border-radius: 0.5rem;
-	margin-block-start: 2 rem;
-	margin-block-end: 10 rem;
+	margin-block-start: var(--paragraph-spacing);
+	/* margin-block-end: 10 rem; */
 	color: white;
 	font-weight: 200;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 blockquote {
-	background-color: rgb(163, 163, 163);
-	color: black;
+	/* background-color: rgb(33, 33, 33); */
+	/* color: black; */
 	font-weight: 250;
+}
+
+body {
+
+	/* color: var(--textcolour);
+	font-size: var(--body-size);
+	font-family: var(--text-typeface);
+	font-weight: var(--regular-wt);
+	line-height:var(--regular-leading);
+	inline-size: calc(100vw - 2*var(--content-indent));
+	max-inline-size: var(--reading-width); */
+	margin-inline: auto;
+}
+
+.prologue {
+	color: rgb(73, 151, 175);
+	margin-block-start: var(--section-spacing);
 }
