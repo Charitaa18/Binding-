@@ -19,8 +19,9 @@
 --accent-typeface:'architectsdaughter', cursive;
 /* TEXTSIZES */
 --basetext:0.5rem;
---text-xtsml: calc(1.5*var(--basetext));
---text-sml: calc(2*var(--basetext));
+--text-xxtsml: calc(1.2*var(--basetext));
+--text-xsml: calc(1.5*var(--basetext));
+--text-sml:calc(2*var(--basetext));
 --text-md: calc(1.5*var(--text-sml));
 --text-lrg: calc(1.5*var(--text-md));
 --text-xlrg: calc(2*var(--text-lrg));
@@ -31,7 +32,6 @@
 --subheading-sm: var(--text-lrg);
 --subheading-lrg: calc(1.5* var(--subheading-sm));
 --heading: var(--text-xxlrg);
-
 /* WEIGHT */
 --base-weight:100;
 --thin-wt: calc(1.5*var(--base-weight));
@@ -47,7 +47,8 @@
 --content-indent: var(--paragraph-spacing);
 --content-end: var(--content-indent);
 /* LEADING */
---regular-leading: calc(2*var(--basetext));
+--tight-leading: calc(2*var(--basetext));
+--regular-leading: calc(2.5*var(--basetext));
 --relaxed-leading: calc(2*var(--regular-leading));
 --open-leading: calc(1.5*var(--relaxed-leading));
 --loose-leading: calc(2*var(--relaxed-leading));
@@ -60,13 +61,16 @@
 body {
 	background-image: var(--background-opt3);
 	color: rgb(234, 240, 243);
-	line-height: var(--relaxed-leading);
 	max-inline-size: var(--page-max-phone);
 	margin-inline: auto;
 	font-family: var(--primary-typeface);
 	font-weight: var(--regular-wt);
+	line-height: var(--relaxed-leading);
+	margin-inline-start: var(--paragraph-spacing);
+	margin-inline-end: var(--paragraph-spacing);
 
 	@media (width > 768px) {
+		margin-inline: auto;
 		max-inline-size: clamp(40rem, 90vw , 65rem);
 			/* Range of values between a defined minimum bound and a maximum bound. */
 			/* https://typography-interaction-2627.github.io/topic/responsive/#clamp */
@@ -79,44 +83,58 @@ nav {
 	margin-block-end:var(--paragraph-spacing) ;
 }
 
-h1{
+h1 {
 	font-family:var(--heading-typeface);
-	font-size: var(--heading);
+	/* font-size: var(--subheading-lrg); */
 	font-weight: var(--extrabold-wt);
-	line-height: var(--extraloose-leading);
+	/* line-height: var(--open-leading); */
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
 
-}
+	/* @media (width > 600px) { */
+		font-size: clamp(var(--subheading-sm), 10vw , var(--heading));
+		line-height: clamp(var(--relaxed-leading), 10vw , var(--extraloose-leading));
+	}
+/* } */
 
 h2, h3 {
 	font-family:var(--heading-typeface);
 	font-weight: var(--bold-wt);
-	line-height: var(--loose-leading);
+	/* line-height: var(--loose-leading); */
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--paragraph-spacing);
-
 }
 
 h2 {
-	font-size: var(--subheading-lrg);
+	/* font-size: var(--subheading-lrg); */
+	font-size: clamp(var(--subheading-sm), 10vw , var(--subheading-lrg));
+	line-height: 1.5;
 }
 
 h3 {
 	font-size: var(--subheading-sm);
+	font-size: clamp(var(--metadata), 10vw , var(--subheading-sm));
 }
 
 P {
-	border-radius: 0.5rem;
 	margin-block-start: var(--paragraph-spacing);
-	/* margin-block-end: 10 rem; */
-	color: white;
-	font-weight: 200;
+	color: var(--primary-white);
+	font-weight: var(--regular-wt);
+	font-size: var(--content);
+	line-height: var(--regular-leading);
+
+	/* @media (width > 600px) { */
+		font-size: clamp(var(--content), 1.5vw , var(--metadata));
+		line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading));
+			/* Accessibility for text */
+			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
+			/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
+	/* } */
 }
 
 blockquote {
-	font-weight: 250;
-	font-style: var(--accent-typeface);
+	font-weight: var(--regular-wt);
+	/* font-family: var(--accent-typeface); */
 }
 
 ul {
@@ -125,13 +143,14 @@ ul {
 	margin-inline-end: var(--content-end); */
 	list-style-type: disc;
 	list-style-position: inside;
+	/* font-size: var(--content); */
+	font-size: clamp(var(--content), 1.5vw , var(--metadata));
+	line-height: 1.5;
 
 }
 
 ol {
-
 	list-style-type: none;
-
 }
 
 a {
@@ -168,7 +187,8 @@ strong {
 sup {
 
 	font-weight: var(--thin-wt);
-	font-size: var(--text-xtsml);
+	/* font-size: var(--text-xsml); */
+	font-size: 0.5em;
 	vertical-align: super;
 }
 
@@ -177,6 +197,13 @@ time {
 	font-family: var(--heading-typeface);
 	font-size: var(--metadata);
 
+}
+
+aside {
+	& p {
+	font-size: var(--content);
+	line-height: 1.5;
+	}
 }
 
 #top {
