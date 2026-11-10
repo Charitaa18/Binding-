@@ -7,6 +7,7 @@
 	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients */
 	/* You can choose the direction of the gradient and also the percentage of space taken up by each colour.  */
 /* COLOURS */
+--primary-black: rgb(0, 0, 0);
 --primary-white: rgb(243, 243, 243);
 --primary-blue: rgb(0, 134, 146);
 --primary-green:rgb(1, 199, 67);
@@ -15,7 +16,7 @@
 --heading-typeface:'lora',sans-serif;
 --primary-typeface:'be vietnam pro',sans-serif;
 --metadata-typeface:var(--primary-typeface);
---accent-typeface:'architects daughter', cursive;
+--accent-typeface:'architectsdaughter', cursive;
 /* TEXTSIZES */
 --basetext:0.5rem;
 --text-xtsml: calc(1.5*var(--basetext));
@@ -29,7 +30,7 @@
 --metadata: var(--text-md);
 --subheading-sm: var(--text-lrg);
 --subheading-lrg: calc(1.5* var(--subheading-sm));
---heading: var(--text-xlrg);
+--heading: var(--text-xxlrg);
 
 /* WEIGHT */
 --base-weight:100;
@@ -93,6 +94,7 @@ h2, h3 {
 	font-weight: var(--bold-wt);
 	line-height: var(--loose-leading);
 	margin-block-start: var(--section-spacing);
+	margin-block-end: var(--paragraph-spacing);
 
 }
 
@@ -114,6 +116,22 @@ P {
 
 blockquote {
 	font-weight: 250;
+	font-style: var(--accent-typeface);
+}
+
+ul {
+
+	/* margin-inline-start: var(--content-start);
+	margin-inline-end: var(--content-end); */
+	list-style-type: disc;
+	list-style-position: inside;
+
+}
+
+ol {
+
+	list-style-type: none;
+
 }
 
 a {
@@ -124,7 +142,20 @@ a {
 			color: var(--primary-blue);
 		}
 	}
+
+	&.article, &.author {
+	text-decoration: none;
+	}
+
+	&.author {
+		font-size: var(--metadata);
+		font-family: var(--heading-typeface);
+	}
+	&.article {
+		font-family: var(--primary-typeface);
+	}
 }
+
 
 em, cite{
 	font-style: italic;
@@ -141,7 +172,33 @@ sup {
 	vertical-align: super;
 }
 
+time {
+
+	font-family: var(--heading-typeface);
+	font-size: var(--metadata);
+
+}
+
+#top {
+	display: block;
+	background-color: var(--primary-white);
+	color: var(--primary-black);
+	font-size: var(--reference-size);
+	margin-block-start: var(--page-start) ;
+	padding-inline: var(--base-spacing);
+	border-top-left-radius: var(--base-spacing);
+	border-end-end-radius: var(--base-spacing);
+	margin-block-start: var(--section-spacing);
+	margin-block-end: var(--section-spacing);
+	text-decoration: none;
+}
+
 .prologue {
 	color: rgb(98, 73, 175);
 	margin-block-start: var(--section-spacing);
+}
+
+span.author {
+	font-weight: var(--bold-wt);
+	color: var(--primary-white);
 }
