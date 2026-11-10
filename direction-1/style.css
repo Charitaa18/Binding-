@@ -20,13 +20,14 @@
 /* TEXTSIZES */
 --basetext:0.5rem;
 --text-xxtsml: calc(1.2*var(--basetext));
---text-xsml: calc(1.5*var(--basetext));
+--text-xsml: calc(1.8*var(--basetext));
 --text-sml:calc(2*var(--basetext));
 --text-md: calc(1.5*var(--text-sml));
 --text-lrg: calc(1.5*var(--text-md));
 --text-xlrg: calc(2*var(--text-lrg));
 --text-xxlrg: calc(1.5*var(--text-xlrg));
 /* TEXTTYPE */
+--references: var(--text-xsml);
 --content:var(--text-sml);
 --metadata: var(--text-md);
 --subheading-sm: var(--text-lrg);
@@ -71,7 +72,7 @@ body {
 
 	@media (width > 768px) {
 		margin-inline: auto;
-		max-inline-size: clamp(40rem, 90vw , 65rem);
+		max-inline-size: clamp(40rem, 90vw , 60rem);
 			/* Range of values between a defined minimum bound and a maximum bound. */
 			/* https://typography-interaction-2627.github.io/topic/responsive/#clamp */
 			/* setting the min, preferred value and max width of the screen respectively when the screen width goes over 768px */
@@ -108,12 +109,16 @@ h2, h3 {
 h2 {
 	/* font-size: var(--subheading-lrg); */
 	font-size: clamp(var(--subheading-sm), 10vw , var(--subheading-lrg));
-	line-height: 1.5;
+	line-height: 1.2;
+		/* Fluid line height */
+		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
+		/* Instead of making the line height sit between a min and max value, this makes it responsive to the size of the text height */
 }
 
 h3 {
-	font-size: var(--subheading-sm);
+	/* font-size: var(--subheading-sm); */
 	font-size: clamp(var(--metadata), 10vw , var(--subheading-sm));
+	line-height: 1.5;
 }
 
 P {
@@ -139,11 +144,8 @@ blockquote {
 
 ul {
 
-	/* margin-inline-start: var(--content-start);
-	margin-inline-end: var(--content-end); */
 	list-style-type: disc;
 	list-style-position: inside;
-	/* font-size: var(--content); */
 	font-size: clamp(var(--content), 1.5vw , var(--metadata));
 	line-height: 1.5;
 
@@ -201,8 +203,12 @@ time {
 
 aside {
 	& p {
-	font-size: var(--content);
-	line-height: 1.5;
+		font-size: var(--references);
+
+		@media (width > 768px) {
+			font-size: var(--content);
+			line-height: 1.2;
+		}
 	}
 }
 
@@ -220,9 +226,14 @@ aside {
 	text-decoration: none;
 }
 
-.prologue {
-	color: rgb(98, 73, 175);
+p.prologue {
+	color: rgb(197, 191, 215);
 	margin-block-start: var(--section-spacing);
+	font-size: clamp(var(--content), 1.5vw , var(--metadata));
+
+	/* @media (width > 768px) {
+		font-size: var(--metadata);
+	} */
 }
 
 span.author {
