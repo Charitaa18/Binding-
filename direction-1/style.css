@@ -209,6 +209,9 @@ a {
 	&.article {
 		font-size: var(--content);
 		font-family: var(--primary-typeface);
+		border-block-start: dashed rgb(110, 110, 110) 0.1rem;
+		border-block-end: dashed rgb(110, 110, 110) 0.1rem;
+		display: block;
 	}
 }
 
@@ -265,9 +268,9 @@ aside {
 p.prologue {
 	color: rgb(214, 210, 225);
 	margin-block-start: var(--section-spacing);
-	font-size: clamp(var(--content), 1.5vw , var(--metadata));
+	font-size: clamp(var(--content), 1.5vw , calc(1.2*var(--content)));
 
-	/* @media (width > 768px) {
+	 /* @media (width > 768px) {
 		font-size: var(--metadata);
 	} */
 }
@@ -282,6 +285,12 @@ span.author {
 	border-block-start: dashed rgb(110, 110, 110) 0.1rem;
 	border-block-end: dashed rgb(110, 110, 110) 0.1rem;
 	font-size: var(--metadata);
+
+	@media (width > 768px) {
+		&:hover {
+			color: var(--primary-blue);
+		}
+	}
 }
 
 .table {
@@ -305,6 +314,11 @@ span.author {
 			font-size: calc(1.5*var(--metadata));
 			padding-block: var(--section-spacing);
 		}
+	}
+	p.tablecontent {
+		font-family: var(--primary-typeface);
+		color: var(--primary-white);
+		font-size: var(--content);
 	}
 
 	/* >p + p {
