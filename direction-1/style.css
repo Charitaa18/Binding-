@@ -54,6 +54,10 @@
 --open-leading: calc(1.5*var(--relaxed-leading));
 --loose-leading: calc(2*var(--relaxed-leading));
 --extraloose-leading: calc(1.5*var(--loose-leading));
+/* LEADING-STYLE-2 */
+--regular: 1.2;
+--relaxed: 1.5;
+--open: 1.8;
 /* MAXSIZE */
 --page-max-phone: 50rem;
 --page-max-laptop:75rem;
@@ -109,7 +113,7 @@ h2, h3 {
 h2 {
 	/* font-size: var(--subheading-lrg); */
 	font-size: clamp(var(--subheading-sm), 10vw , var(--subheading-lrg));
-	line-height: 1.2;
+	line-height: var(--regular);
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
 		/* Instead of making the line height sit between a min and max value, this makes it responsive to the size of the text height */
@@ -118,7 +122,7 @@ h2 {
 h3 {
 	/* font-size: var(--subheading-sm); */
 	font-size: clamp(var(--metadata), 10vw , var(--subheading-sm));
-	line-height: 1.5;
+	line-height: var(--relaxed);
 }
 
 P {
@@ -143,16 +147,24 @@ blockquote {
 }
 
 ul {
-
 	list-style-type: disc;
-	list-style-position: inside;
+	/* list-style-position: inside; */
 	font-size: clamp(var(--content), 1.5vw , var(--metadata));
-	line-height: 1.5;
-
+	line-height: var(--relaxed);
+	list-style-position: outside;
+	/* position: absolute; */
+	padding-inline-start: 1.3rem;
+	/* text-indent: -0.5rem; */
+		/* Sets the length of empty space (indentation) */
+		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-indent */
+		/* By setting the indent in a negative number, the start of the first line pops out by that value. The rest of the content remains untouched.  */
 }
 
 ol {
 	list-style-type: none;
+	/* list-style-type: disc; */
+	/* opacity: 0%; */
+	list-style-position: outside;
 }
 
 a {
@@ -207,7 +219,7 @@ aside {
 
 		@media (width > 768px) {
 			font-size: var(--content);
-			line-height: 1.2;
+			line-height: var(--relaxed);
 		}
 	}
 }
@@ -215,12 +227,11 @@ aside {
 #top {
 	display: block;
 	background-color: var(--primary-white);
+	opacity: 30%;
 	color: var(--primary-black);
 	font-size: var(--reference-size);
-	margin-block-start: var(--page-start) ;
-	padding-inline: var(--base-spacing);
-	border-top-left-radius: var(--base-spacing);
-	border-end-end-radius: var(--base-spacing);
+	padding-inline: var(--paragraph-spacing);
+	border-radius: 2rem;
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
 	text-decoration: none;
