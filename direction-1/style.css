@@ -1,6 +1,6 @@
 :root {
 /* BACKGROUND */
---background-opt1:rgb(0, 0, 0);
+--background-opt1:rgb(39, 38, 42);
 --background-opt2:rgb(83, 8, 8);
 --background-opt3: linear-gradient(to bottom,rgb(39, 38, 42)20%, rgb(67, 63, 77) 46%, rgb(107, 111, 143) 70%, rgb(146, 173, 178));
 	/* Positioning color stops with liner gradient */
@@ -12,6 +12,7 @@
 --primary-blue: rgb(0, 134, 146);
 --primary-green:rgb(1, 199, 67);
 --primary-purple:rgb(101, 66, 227);
+--primary-grey:rgb(39, 38, 42);
 /* TYPEFACE */
 --heading-typeface:'lora',sans-serif;
 --primary-typeface:'be vietnam pro',sans-serif;
@@ -24,14 +25,14 @@
 --text-sml:calc(2*var(--basetext));
 --text-md: calc(1.5*var(--text-sml));
 --text-lrg: calc(1.5*var(--text-md));
---text-xlrg: calc(2*var(--text-lrg));
---text-xxlrg: calc(1.5*var(--text-xlrg));
+--text-xlrg: calc(1.5*var(--text-lrg));
+--text-xxlrg: calc(2*var(--text-xlrg));
 /* TEXTTYPE */
 --references: var(--text-xsml);
 --content:var(--text-sml);
 --metadata: var(--text-md);
---subheading-sm: var(--text-lrg);
---subheading-lrg: calc(1.5* var(--subheading-sm));
+--subheading-sm: var(--text-xlrg);
+--subheading-lrg: calc(1.2* var(--subheading-sm));
 --heading: var(--text-xxlrg);
 /* WEIGHT */
 --base-weight:100;
@@ -64,7 +65,7 @@
 }
 
 body {
-	background-image: var(--background-opt3);
+	background-color: var(--background-opt1);
 	color: rgb(234, 240, 243);
 	max-inline-size: var(--page-max-phone);
 	margin-inline: auto;
@@ -88,10 +89,12 @@ nav {
 	margin-block-end:var(--paragraph-spacing) ;
 }
 
-h1 {
+h1{
+	color: rgb(39, 38, 42);
 	font-family:var(--heading-typeface);
-	/* font-size: var(--subheading-lrg); */
+	-webkit-text-stroke: 0.1rem rgb(101, 66, 227);
 	font-weight: var(--extrabold-wt);
+	/* font-size: var(--subheading-lrg); */
 	/* line-height: var(--open-leading); */
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
@@ -99,13 +102,22 @@ h1 {
 	/* @media (width > 600px) { */
 		font-size: clamp(var(--subheading-sm), 10vw , var(--heading));
 		line-height: clamp(var(--relaxed-leading), 10vw , var(--extraloose-leading));
+		@media (width > 600px) {
+			-webkit-text-stroke: 0.15rem rgb(101, 66, 227);
+		}
 	}
 /* } */
+h1 span, h2 span, h3 span {
+	color: var(--primary-purple);
+	-webkit-text-stroke: 0;
+
+}
 
 h2, h3 {
+	color: rgb(39, 38, 42);
+	-webkit-text-stroke: 0.04rem rgb(101, 66, 227);
 	font-family:var(--heading-typeface);
 	font-weight: var(--bold-wt);
-	/* line-height: var(--loose-leading); */
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--paragraph-spacing);
 }
@@ -117,12 +129,13 @@ h2 {
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
 		/* Instead of making the line height sit between a min and max value, this makes it responsive to the size of the text height */
-}
+	-webkit-text-stroke: 0.1rem rgb(101, 66, 227);
+	}
 
 h3 {
 	/* font-size: var(--subheading-sm); */
 	font-size: clamp(var(--metadata), 10vw , var(--subheading-sm));
-	line-height: var(--relaxed);
+	line-height: var(--regular);
 }
 
 P {
@@ -148,7 +161,6 @@ blockquote {
 
 ul {
 	list-style-type: disc;
-	/* list-style-position: inside; */
 	font-size: clamp(var(--content), 1.5vw , var(--metadata));
 	line-height: var(--relaxed);
 	list-style-position: outside;
@@ -158,7 +170,17 @@ ul {
 		/* Sets the length of empty space (indentation) */
 		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-indent */
 		/* By setting the indent in a negative number, the start of the first line pops out by that value. The rest of the content remains untouched.  */
+	li{
+		padding: var(--base-spacing);
+		&:nth-child(2) {border-block-start: solid rgb(110, 110, 110) 0.1rem;}
+		&:nth-child(3) {border-block-start: solid rgb(110, 110, 110) 0.1rem;}
+		&:nth-child(4) {border-block-start: solid rgb(110, 110, 110) 0.1rem;}
+			/* margin line using border */
+			/* https://typography-interaction-2627.github.io/topic/box-model/#different-border-style-options */
+			/* border only applies to block-start or top of the margin box */
+	}
 }
+
 
 ol {
 	list-style-type: none;
@@ -226,12 +248,15 @@ aside {
 
 #top {
 	display: block;
-	background-color: var(--primary-white);
-	opacity: 30%;
+	background-color: var(--primary-grey);
+	border-block-start: solid rgb(110, 110, 110) 0.1rem;
+	border-block-end: solid rgb(110, 110, 110) 0.1rem;
+	/* border-style: solid;
+	border-color: var(--primary-purple); */
 	color: var(--primary-black);
-	font-size: var(--reference-size);
+	font-size: var(--references);
 	padding-inline: var(--paragraph-spacing);
-	border-radius: 2rem;
+	/* border-radius: 2rem; */
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
 	text-decoration: none;
