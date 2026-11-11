@@ -320,8 +320,32 @@ span.author {
 		color: var(--primary-white);
 		font-size: var(--content);
 	}
+}
+
+	.section-header {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: var(--paragraph-spacing);
+		align-items: baseline;
+		border-block-end: solid rgb(110, 110, 110) 0.2rem;
+
+		.section-number {
+			font-size: var(--subheading-sm);
+			font-weight: var(--extrabold-wt);
+			grid-column: span 1;
+			color: var(--primary-purple);
+
+			@media (width >768px) {
+				font-size: var(--subheading-lrg);
+			}
+		}
+
+		h2 {
+			grid-column: span 5;
+		}
+	}
 
 	/* >p + p {
 		border-inline-start: solid rgb(110, 110, 110) 0.1rem;
 	} */
-}
+
