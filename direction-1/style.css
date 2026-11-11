@@ -280,6 +280,13 @@ span.author {
 	color: var(--primary-white);
 }
 
+mark {
+	color: var(--primary-white);
+	background-color: rgb(100, 188, 185);
+	padding-inline: 0.3rem;
+	border-radius: var(--base-spacing);
+}
+
 .contentslabel {
 	display: block;
 	border-block-start: dashed rgb(110, 110, 110) 0.1rem;
