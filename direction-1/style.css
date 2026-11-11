@@ -253,7 +253,6 @@ aside {
 	border-block-end: solid rgb(110, 110, 110) 0.1rem;
 	/* border-style: solid;
 	border-color: var(--primary-purple); */
-	color: var(--primary-black);
 	font-size: var(--references);
 	padding-inline: var(--paragraph-spacing);
 	/* border-radius: 2rem; */
@@ -275,4 +274,11 @@ p.prologue {
 span.author {
 	font-weight: var(--bold-wt);
 	color: var(--primary-white);
+}
+
+.contentslabel {
+	display: block;
+	border-block-start: solid rgb(110, 110, 110) 0.1rem;
+	border-block-end: solid rgb(110, 110, 110) 0.1rem;
+	font-size: var(--metadata);
 }
