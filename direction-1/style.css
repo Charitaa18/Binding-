@@ -238,7 +238,7 @@ aside {
 }
 
 p.prologue {
-	color: rgb(197, 191, 215);
+	color: rgb(214, 210, 225);
 	margin-block-start: var(--section-spacing);
 	font-size: clamp(var(--content), 1.5vw , var(--metadata));
 
