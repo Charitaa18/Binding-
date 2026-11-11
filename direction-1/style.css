@@ -86,7 +86,7 @@ body {
 
 nav {
 	margin-block-start: var(--section-spacing);
-	margin-block-end:var(--paragraph-spacing) ;
+	/* margin-block-end:var(--paragraph-spacing) ; */
 }
 
 h1{
@@ -207,6 +207,7 @@ a {
 		font-family: var(--heading-typeface);
 	}
 	&.article {
+		font-size: var(--content);
 		font-family: var(--primary-typeface);
 	}
 }
@@ -249,8 +250,8 @@ aside {
 #top {
 	display: block;
 	background-color: var(--primary-grey);
-	border-block-start: solid rgb(110, 110, 110) 0.1rem;
-	border-block-end: solid rgb(110, 110, 110) 0.1rem;
+	border-block-start: dashed rgb(110, 110, 110) 0.1rem;
+	border-block-end: dashed rgb(110, 110, 110) 0.1rem;
 	/* border-style: solid;
 	border-color: var(--primary-purple); */
 	font-size: var(--references);
@@ -278,7 +279,35 @@ span.author {
 
 .contentslabel {
 	display: block;
-	border-block-start: solid rgb(110, 110, 110) 0.1rem;
-	border-block-end: solid rgb(110, 110, 110) 0.1rem;
+	border-block-start: dashed rgb(110, 110, 110) 0.1rem;
+	border-block-end: dashed rgb(110, 110, 110) 0.1rem;
 	font-size: var(--metadata);
+}
+
+.table {
+	display: flex;
+	justify-content: space-around;
+	padding-block-start: var(--paragraph-spacing);
+	padding-block-end: var(--paragraph-spacing);
+
+	span.divider {
+		border-inline-start: solid rgb(110, 110, 110) 0.1rem;
+		/* padding-block-start: var(--section-spacing); */
+	}
+	> p {
+		margin: 0;
+		color: var(--primary-purple);
+		font-family: var(--heading-typeface);
+		font-size: var(--metadata);
+		padding-block: var(--paragraph-spacing);
+
+		@media (width > 768px) {
+			font-size: calc(1.5*var(--metadata));
+			padding-block: var(--section-spacing);
+		}
+	}
+
+	/* >p + p {
+		border-inline-start: solid rgb(110, 110, 110) 0.1rem;
+	} */
 }
