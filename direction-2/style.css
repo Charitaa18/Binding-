@@ -19,7 +19,7 @@
 --subheading-typeface: 'jost',sans-serif;
 --primary-typeface:'roboto',sans-serif;
 --metadata-typeface:var(--primary-typeface);
---accent-typeface:'architectsdaughter', cursive;
+--accent-typeface:'architects daughter', cursive;
 --accent-typeface2:'Annie Use Your Telescope', cursive;
 /* TEXTSIZES */
 --basetext:0.5rem;
@@ -129,7 +129,7 @@ h2, h3 {
 
 h2 {
 	/* font-size: var(--subheading-lrg); */
-	font-size: clamp(calc(var(--subheading-sm)/1.2), 10vw , var(--subheading-lrg));
+	font-size: clamp(calc(var(--subheading-sm)/1.4), 10vw , var(--subheading-lrg));
 	line-height: 1.1;
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
