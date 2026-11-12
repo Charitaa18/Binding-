@@ -194,6 +194,7 @@ ol.toc {
 		box-shadow: 0 0.2rem 0.4rem rgb(0 0 0/20%);
 		position: relative;
 		margin-block-start: var(--section-spacing);
+		font-family: var(--heading-typeface);
 
 }
 
@@ -273,7 +274,7 @@ aside {
 
 #top {
 	display: block;
-	background-color: var(--primary-grey);
+	background-color: rgb(235, 231, 162);
 	/* border-style: solid;
 	border-color: var(--primary-purple); */
 	font-size: var(--references);
