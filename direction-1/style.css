@@ -282,7 +282,7 @@ span.author {
 
 mark {
 	color: var(--primary-white);
-	background-color: rgb(100, 188, 185);
+	background-color: rgb(130, 100, 219);
 	padding-inline: 0.3rem;
 	border-radius: var(--base-spacing);
 }
@@ -300,8 +300,8 @@ mark {
 	}
 }
 
-.table {
-	display: flex;
+/* .table { */
+	/* display: flex;
 	justify-content: space-around;
 	padding-block-start: var(--paragraph-spacing);
 	padding-block-end: var(--paragraph-spacing);
@@ -309,8 +309,8 @@ mark {
 	span.divider {
 		border-inline-start: solid rgb(110, 110, 110) 0.1rem;
 		/* padding-block-start: var(--section-spacing); */
-	}
-	> p {
+
+	/* > p {
 		margin: 0;
 		color: var(--primary-purple);
 		font-family: var(--heading-typeface);
@@ -321,8 +321,44 @@ mark {
 			font-size: calc(1.5*var(--metadata));
 			padding-block: var(--section-spacing);
 		}
+	} */
+	/* p.tablecontent {
+		font-family: var(--primary-typeface);
+		color: var(--primary-white);
+		font-size: var(--content);
+	} */
+
+.table {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-block-start: var(--paragraph-spacing);
+	padding-block-end: var(--paragraph-spacing);
+
+	span.divider {
+		border-inline-start: solid rgb(110, 110, 110) 0.1rem;
 	}
-	p.tablecontent {
+
+	div {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.tablehead {
+		color: var(--primary-purple);
+		font-family: var(--heading-typeface);
+		font-size: var(--metadata);
+		padding-block: var(--paragraph-spacing);
+
+		@media (width > 768px) {
+			font-size: calc(1.5*var(--metadata));
+			padding-block: var(--section-spacing);
+		}
+	}
+
+	.tablecontent {
 		font-family: var(--primary-typeface);
 		color: var(--primary-white);
 		font-size: var(--content);
@@ -331,7 +367,7 @@ mark {
 
 	.section-header {
 		display: grid;
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(7, 1fr);
 		gap: var(--paragraph-spacing);
 		align-items: baseline;
 		border-block-end: solid rgb(110, 110, 110) 0.2rem;
@@ -348,7 +384,7 @@ mark {
 		}
 
 		h2 {
-			grid-column: span 5;
+			grid-column: span 6;
 		}
 	}
 
