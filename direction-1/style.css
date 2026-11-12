@@ -340,20 +340,23 @@ mark {
 	}
 
 	div {
-		display: flex;
+		/* display: flex; */
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
+		text-align: center;
 	}
 
 	.tablehead {
 		color: var(--primary-purple);
 		font-family: var(--heading-typeface);
 		font-size: var(--metadata);
+		font-weight: var(--bold-wt);
 		padding-block: var(--paragraph-spacing);
 
 		@media (width > 768px) {
 			font-size: calc(1.5*var(--metadata));
+			font-weight: var(--extrabold-wt);
 			padding-block: var(--section-spacing);
 		}
 	}
@@ -362,6 +365,11 @@ mark {
 		font-family: var(--primary-typeface);
 		color: var(--primary-white);
 		font-size: var(--content);
+
+		@media (width > 768px) {
+			font-size: var(--metadata);
+			padding-block: var(--section-spacing);
+		}
 	}
 }
 
