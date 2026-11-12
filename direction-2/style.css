@@ -19,7 +19,7 @@
 --subheading-typeface: 'jost',sans-serif;
 --primary-typeface:'roboto',sans-serif;
 --metadata-typeface:var(--primary-typeface);
---accent-typeface:'architects daughter', cursive;
+--accent-typeface:'Architects Daughter', cursive;
 --accent-typeface2:'Annie Use Your Telescope', cursive;
 /* TEXTSIZES */
 --basetext:0.5rem;
@@ -35,7 +35,7 @@
 --content:var(--text-sml);
 --metadata: var(--text-md);
 --subheading-xsm: var(--text-lrg);
---subheading-sm: var(--text-xlrg);
+--subheading-sm: calc(var(--text-xlrg)/1.2);
 --subheading-lrg: calc(1.2* var(--subheading-sm));
 --heading: var(--text-xxlrg);
 /* WEIGHT */
