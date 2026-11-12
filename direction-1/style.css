@@ -9,7 +9,7 @@
 /* COLOURS */
 --primary-black: rgb(0, 0, 0);
 --primary-white: rgb(243, 243, 243);
---primary-blue: rgb(0, 134, 146);
+--primary-blue: rgb(5, 139, 152);
 --primary-green:rgb(1, 199, 67);
 --primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
@@ -193,6 +193,7 @@ ol {
 
 a {
 	text-decoration: underline;
+
 
 	@media (width > 768px) {
 		&:hover {
