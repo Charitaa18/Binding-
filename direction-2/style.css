@@ -103,14 +103,15 @@ h1{
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
 	text-transform: uppercase;
+	line-height: 1.2;
 
 	/* @media (width > 600px) { */
 		font-size: clamp(var(--subheading-sm), 12vw , var(--heading));
-		line-height: clamp(var(--relaxed-leading), 12vw , var(--extraloose-leading));
+		/* line-height: clamp(var(--relaxed-leading), 12vw , var(--extraloose-leading)); */
 }
 
-h1 span, h2 span, h3 span {
-	color: var(--primary-green);
+h1 span{
+	background-color: var(--primary-green);
 	-webkit-text-stroke: 0;
 
 }
@@ -356,6 +357,7 @@ span.author {
 
 			@media (width >768px) {
 				font-size: var(--subheading-lrg);
+
 			}
 		}
 
@@ -408,5 +410,35 @@ span.author {
 	p.design {
 		font-size: calc(1.1*var(--metadata));
 		color: rgb(52, 195, 52);
+	}
+}
+
+.sticky-note {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--base-spacing);
+	background-color: rgb(233, 233, 99);
+	box-shadow: 0.1rem 0.2rem 0.3rem rgb(0 0 0 / 50%);
+	padding: var(--paragraph-spacing);
+	rotate: -2deg;
+	font-family: var(--accent-typeface);
+	font-size: var(--content);
+	line-height: 1.2;
+	margin-block: var(--paragraph-spacing);
+	p {
+		margin-block-start: 0;
+	}
+
+	.sticky-label {
+		font-size: var(--metadata);
+		color: rgb(192, 45, 45);
+	}
+	span.sticky-highlight {
+		color:rgb(52, 195, 52);
+	}
+	.sticky-accent {
+		font-family: var(--heading-typeface);
+		/* text-decoration: underline; */
+		text-decoration: double underline;
 	}
 }
