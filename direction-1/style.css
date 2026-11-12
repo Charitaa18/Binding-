@@ -17,7 +17,7 @@
 --heading-typeface:'lora',sans-serif;
 --primary-typeface:'be vietnam pro',sans-serif;
 --metadata-typeface:var(--primary-typeface);
---accent-typeface:'architectsdaughter', cursive;
+--accent-typeface:'architects daughter', cursive;
 /* TEXTSIZES */
 --basetext:0.5rem;
 --text-xxtsml: calc(1.2*var(--basetext));
