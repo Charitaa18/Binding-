@@ -15,7 +15,8 @@
 --primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
 /* TYPEFACE */
---heading-typeface:'jost',sans-serif;
+--heading-typeface:'architects daughter',sans-serif;
+--subheading-typeface: 'jost',sans-serif;
 --primary-typeface:'roboto',sans-serif;
 --metadata-typeface:var(--primary-typeface);
 --accent-typeface:'architectsdaughter', cursive;
@@ -27,12 +28,13 @@
 --text-sml:calc(2*var(--basetext));
 --text-md: calc(1.5*var(--text-sml));
 --text-lrg: calc(1.5*var(--text-md));
---text-xlrg: calc(1.5*var(--text-lrg));
---text-xxlrg: calc(2*var(--text-xlrg));
+--text-xlrg: calc(2*var(--text-lrg));
+--text-xxlrg: calc(2.5*var(--text-xlrg));
 /* TEXTTYPE */
 --references: var(--text-xsml);
 --content:var(--text-sml);
 --metadata: var(--text-md);
+--subheading-xsm: var(--text-lrg);
 --subheading-sm: var(--text-xlrg);
 --subheading-lrg: calc(1.2* var(--subheading-sm));
 --heading: var(--text-xxlrg);
@@ -100,10 +102,11 @@ h1{
 	font-weight: var(--extrabold-wt);
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
+	text-transform: uppercase;
 
 	/* @media (width > 600px) { */
-		font-size: clamp(var(--subheading-sm), 10vw , var(--heading));
-		line-height: clamp(var(--relaxed-leading), 10vw , var(--extraloose-leading));
+		font-size: clamp(var(--subheading-sm), 12vw , var(--heading));
+		line-height: clamp(var(--relaxed-leading), 12vw , var(--extraloose-leading));
 }
 
 h1 span, h2 span, h3 span {
@@ -122,8 +125,8 @@ h2, h3 {
 
 h2 {
 	/* font-size: var(--subheading-lrg); */
-	font-size: clamp(var(--subheading-sm), 10vw , var(--subheading-lrg));
-	line-height: 1.5;
+	font-size: clamp(calc(var(--subheading-sm)/1.2), 10vw , var(--subheading-lrg));
+	line-height: 1.1;
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
 		/* Instead of making the line height sit between a min and max value, this makes it responsive to the size of the text height */
@@ -140,11 +143,11 @@ P {
 	color: var(--primary-black);
 	font-weight: var(--regular-wt);
 	font-size: var(--content);
-	line-height: var(--regular-leading);
+	line-height: 1.5;
 
 	/* @media (width > 600px) { */
 		font-size: clamp(var(--content), 1.5vw , var(--metadata));
-		line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading));
+		/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
 			/* Accessibility for text */
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
 			/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
@@ -198,8 +201,9 @@ a {
 		font-family: var(--heading-typeface);
 	}
 	&.article {
-		font-size: var(--content);
+		font-size: var(--references);
 		font-family: var(--primary-typeface);
+		text-decoration: underline;
 		display: block;
 	}
 }
@@ -252,6 +256,15 @@ aside {
 	text-decoration: none;
 }
 
+mark {
+	color: var(--primary-black);
+	font-weight: var(--semibold-wt);
+	/* text-decoration: overline; */
+	background-color: rgb(180, 162, 235);
+	padding-inline: 0.1rem;
+	border-radius: 0.2rem;
+}
+
 p.prologue {
 	color: rgb(27, 27, 28);
 	margin-block-start: var(--section-spacing);
@@ -276,6 +289,17 @@ span.author {
 			color: var(--primary-blue);
 		}
 	}
+}
+
+.introduction {
+	>div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	}
+}
+.subheading-min {
+	font-size: var(--content);
 }
 
 .table {
@@ -310,3 +334,29 @@ span.author {
 		border-inline-start: solid rgb(110, 110, 110) 0.1rem;
 	} */
 }
+
+	.section-header {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		gap: var(--paragraph-spacing);
+		align-items: baseline;
+
+		.section-number {
+			font-size: calc(1.2*var(--subheading-xsm));
+			font-weight: var(--extrabold-wt);
+			grid-column: span 1;
+			color: var(--primary-green);
+			font-family: var(--heading-typeface);
+			border: solid black 0.2rem;
+			border-radius: 50%;
+			padding: var(--base-spacing);
+
+			@media (width >768px) {
+				font-size: var(--subheading-lrg);
+			}
+		}
+
+		h2 {
+			grid-column: span 6;
+		}
+	}
