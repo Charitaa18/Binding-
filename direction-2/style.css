@@ -260,9 +260,12 @@ mark {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
 	/* text-decoration: overline; */
-	background-color: rgb(180, 162, 235);
+	background-color: rgb(235, 231, 162);
 	padding-inline: 0.1rem;
 	border-radius: 0.2rem;
+	/* filter: blur(0.2em) */
+		/* https://typography-interaction-2627.github.io/topic/advanced-css/#filter */
+		/* Is there a way to blur the mark without blurring the text */
 }
 
 p.prologue {
@@ -360,3 +363,50 @@ span.author {
 			grid-column: span 6;
 		}
 	}
+
+.key-argument {
+
+	display:flex;
+	flex-direction: column;
+	row-gap: var(--paragraph-spacing);
+	font-family: var(--accent-typeface);
+
+	.note-content {
+		display:flex;
+		flex-direction: column;
+		row-gap: var(--base-spacing);
+		padding-inline: var(--paragraph-spacing);
+		padding-block:var(--paragraph-spacing);
+		/* padding-block-end:var(--section-spacing); */
+		border: dashed rgb(192, 45, 45) 0.1rem;
+		border-radius: 1rem;
+		font-size: var(--content);
+		/* background-color: white; */
+	}
+
+	span.third {
+			margin-inline-start: var(--paragraph-spacing);
+			font-size: var(--references);
+			font-family: var(--heading-typeface);
+			color: rgb(52, 195, 52);
+			border: solid rgb(52, 195, 52) 0.1rem;
+			border-radius: 50%;
+			padding: var(--base-spacing);
+			/* display: inline-block; */
+		}
+
+	.note {
+		color: rgb(192, 45, 45);
+		font-size: var(--metadata);
+		rotate: -3deg;
+	}
+
+	p {
+		margin-block-start: 0;
+	}
+
+	p.design {
+		font-size: calc(1.1*var(--metadata));
+		color: rgb(52, 195, 52);
+	}
+}
