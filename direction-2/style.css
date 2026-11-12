@@ -15,10 +15,11 @@
 --primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
 /* TYPEFACE */
---heading-typeface:'lora',sans-serif;
---primary-typeface:'be vietnam pro',sans-serif;
+--heading-typeface:'jost',sans-serif;
+--primary-typeface:'roboto',sans-serif;
 --metadata-typeface:var(--primary-typeface);
 --accent-typeface:'architectsdaughter', cursive;
+--accent-typeface2:'Annie Use Your Telescope', cursive;
 /* TEXTSIZES */
 --basetext:0.5rem;
 --text-xxtsml: calc(1.2*var(--basetext));
@@ -75,6 +76,9 @@ body {
 	line-height: var(--relaxed-leading);
 	margin-inline-start: var(--paragraph-spacing);
 	margin-inline-end: var(--paragraph-spacing);
+
+	border-inline-start: solid rgb(196, 55, 55) 0.2rem;
+	padding-inline-start: var(--paragraph-spacing);
 
 	@media (width > 768px) {
 		margin-inline: auto;
@@ -249,7 +253,7 @@ aside {
 }
 
 p.prologue {
-	color: rgb(214, 210, 225);
+	color: rgb(27, 27, 28);
 	margin-block-start: var(--section-spacing);
 	font-size: clamp(var(--content), 1.5vw , calc(1.2*var(--content)));
 
@@ -259,8 +263,8 @@ p.prologue {
 }
 
 span.author {
-	font-weight: var(--bold-wt);
-	color: var(--primary-white);
+	font-weight: var(--semibold-wt);
+	color: var(--primary-black);
 }
 
 .contentslabel {

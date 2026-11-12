@@ -94,14 +94,15 @@ h1{
 	font-family:var(--heading-typeface);
 	-webkit-text-stroke: 0.1rem rgb(101, 66, 227);
 	font-weight: var(--extrabold-wt);
+	text-transform: uppercase;
 	/* font-size: var(--subheading-lrg); */
 	/* line-height: var(--open-leading); */
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
 
 	/* @media (width > 600px) { */
-		font-size: clamp(var(--subheading-sm), 10vw , var(--heading));
-		line-height: clamp(var(--relaxed-leading), 10vw , var(--extraloose-leading));
+		font-size: clamp(var(--subheading-sm), 14vw , var(--heading));
+		line-height: clamp(var(--relaxed-leading), 12vw , var(--extraloose-leading));
 		@media (width > 600px) {
 			-webkit-text-stroke: 0.15rem rgb(101, 66, 227);
 		}
@@ -143,11 +144,12 @@ P {
 	color: var(--primary-white);
 	font-weight: var(--regular-wt);
 	font-size: var(--content);
-	line-height: var(--regular-leading);
+	/* line-height: calc(2*var(--regular-leading)); */
+	line-height: 2;
 
 	/* @media (width > 600px) { */
 		font-size: clamp(var(--content), 1.5vw , var(--metadata));
-		line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading));
+		/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
 			/* Accessibility for text */
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
 			/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
@@ -281,17 +283,18 @@ span.author {
 }
 
 mark {
-	color: var(--primary-white);
-	background-color: rgb(130, 100, 219);
-	padding-inline: 0.3rem;
-	border-radius: var(--base-spacing);
+	color: var(--primary-purple);
+	text-decoration: overline;
+	/* background-color: rgb(130, 100, 219); */
+	padding-inline: 0.1rem;
+	/* border-radius: var(--base-spacing); */
 }
 
 .contentslabel {
 	display: block;
 	border-block-start: dashed rgb(110, 110, 110) 0.1rem;
 	border-block-end: dashed rgb(110, 110, 110) 0.1rem;
-	font-size: var(--metadata);
+	font-size: calc(var(--metadata)/1.5);
 
 	@media (width > 768px) {
 		&:hover {
