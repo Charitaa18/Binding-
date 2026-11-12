@@ -119,17 +119,16 @@ h2, h3 {
 h2 {
 	/* font-size: var(--subheading-lrg); */
 	font-size: clamp(var(--subheading-sm), 10vw , var(--subheading-lrg));
-	line-height: var(--regular);
+	line-height: 1.5;
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
 		/* Instead of making the line height sit between a min and max value, this makes it responsive to the size of the text height */
-	-webkit-text-stroke: 0.1rem rgb(101, 66, 227);
 	}
 
 h3 {
 	/* font-size: var(--subheading-sm); */
 	font-size: clamp(var(--metadata), 10vw , var(--subheading-sm));
-	line-height: var(--regular);
+	line-height: 1.2;
 }
 
 P {
