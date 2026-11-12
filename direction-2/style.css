@@ -64,6 +64,7 @@
 --relaxed: 1.5;
 --open: 1.8;
 /* MAXSIZE */
+--page-max-sticky:20rem;
 --page-max-phone: 50rem;
 --page-max-laptop:75rem;
 }
@@ -111,8 +112,10 @@ h1{
 }
 
 h1 span{
-	background-color: var(--primary-green);
+	/* background-color: var(--primary-green); */
 	-webkit-text-stroke: 0;
+	background-color: rgb(235, 229, 127);
+	padding-inline: 0.5rem;
 
 }
 
@@ -417,7 +420,7 @@ span.author {
 	display: flex;
 	flex-direction: column;
 	row-gap: var(--base-spacing);
-	background-color: rgb(233, 233, 99);
+	background-color: rgb(243, 243, 140);
 	box-shadow: 0.1rem 0.2rem 0.3rem rgb(0 0 0 / 50%);
 	padding: var(--paragraph-spacing);
 	rotate: -2deg;
@@ -425,6 +428,7 @@ span.author {
 	font-size: var(--content);
 	line-height: 1.2;
 	margin-block: var(--paragraph-spacing);
+	max-inline-size: var(--page-max-sticky);
 	p {
 		margin-block-start: 0;
 	}
@@ -434,7 +438,8 @@ span.author {
 		color: rgb(192, 45, 45);
 	}
 	span.sticky-highlight {
-		color:rgb(52, 195, 52);
+		/* color:rgb(52, 195, 52); */
+		font-weight: var(--bold-wt);
 	}
 	.sticky-accent {
 		font-family: var(--heading-typeface);
