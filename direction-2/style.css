@@ -70,7 +70,12 @@
 }
 
 body {
-	background-color: var(--background-opt3);
+	background-image: url("images/Grid-PNG-Picture.png");
+	/* Image file path */
+	/* https://chatgpt.com/s/t_6af764e340148191844d8da58a467fd3 */
+	/* You have to specify which folder the image is in. Can't just link it. Tried through MDN first but couldn't figure out the problem. */
+	background-repeat: repeat;
+	/* background-color: var(--background-opt3); */
 	color: var(--primary-black);
 	max-inline-size: var(--page-max-phone);
 	margin-inline: auto;
