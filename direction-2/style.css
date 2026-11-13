@@ -99,7 +99,7 @@ nav {
 
 h1{
 	color: rgb(39, 38, 42);
-	font-family:var(--heading-typeface);
+	font-family:var(--primary-typeface);
 	font-weight: var(--extrabold-wt);
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
@@ -288,6 +288,7 @@ aside {
 mark {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
+	transform: rotate(9deg);
 	/* text-decoration: overline; */
 	background-color: rgb(235, 231, 162);
 	padding-inline: 0.1rem;
