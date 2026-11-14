@@ -104,6 +104,80 @@ nav {
 	/* margin-block-end:var(--paragraph-spacing) ; */
 }
 
+nav details {
+	background-color: var(--primary-white);
+	/* margin-block-start: var(--section-spacing); */
+	margin-block: var(--paragraph-spacing);
+	padding: var(--paragraph-spacing);
+	font-family: var(--accent-typeface);
+	font-size: var(--references);
+
+	@media (width> 768px) {
+		font-size: calc(1.5*var(--content));
+		&:hover {
+			color: var(--primary-blue);
+		}
+	}
+
+	summary {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	}
+
+	.triangle {
+	width: 0;
+	height: 0;
+	transform: rotate(0deg);
+
+	border-top-width:0.5rem ;
+	border-top-style:solid ;
+	border-top-color:transparent ;
+
+	border-bottom-width: 0.5rem;
+	border-bottom-style: solid;
+	border-bottom-color: transparent;
+
+	border-left-width: 0.5rem;
+	border-left-style: solid;
+	border-left-color: var(--primary-black);
+	}
+
+	p.tableofcontents {
+		margin: 0;
+	}
+
+	&[open] .triangle {
+	transform: rotate(90deg);
+	}
+
+	ol.toc {
+		background-color: white;
+		padding: var(--paragraph-spacing);
+		border: solid rgb(206, 206, 206) 0.1rem;
+		box-shadow: 0 0.2rem 0.4rem rgb(0 0 0/20%);
+		position: relative;
+		margin-block-start: var(--section-spacing);
+		font-family: var(--heading-typeface);
+		margin-block-end: var(--paragraph-spacing);
+
+	}
+
+		ol.toc::before {
+			content: "";
+			position: absolute;
+			background-color: rgb(185, 182, 182);
+			inline-size: 8rem;
+			block-size: 2rem;
+			rotate: -2deg;
+			opacity:50% ;
+			inset-block-start: -0.9rem;
+			inset-inline-start: 9rem;
+				/* https://typography-interaction-2627.github.io/topic/box-model/#absolute */
+		}
+}
+
 h1{
 	color: rgb(39, 38, 42);
 	font-family:var(--primary-typeface);
@@ -197,31 +271,6 @@ ol {
 	/* opacity: 0%; */
 	list-style-position: outside;
 }
-
-ol.toc {
-		background-color: white;
-		padding: var(--paragraph-spacing);
-		border: solid rgb(206, 206, 206) 0.1rem;
-		box-shadow: 0 0.2rem 0.4rem rgb(0 0 0/20%);
-		position: relative;
-		margin-block-start: var(--section-spacing);
-		font-family: var(--heading-typeface);
-
-}
-
-ol.toc::before {
-			content: "";
-			position: absolute;
-			background-color: rgb(185, 182, 182);
-			inline-size: 8rem;
-			block-size: 2rem;
-			rotate: -2deg;
-			opacity:50% ;
-			inset-block-start: -0.9rem;
-			inset-inline-start: 9rem;
-				/* https://typography-interaction-2627.github.io/topic/box-model/#absolute */
-		}
-
 
 a {
 	text-decoration: underline;
